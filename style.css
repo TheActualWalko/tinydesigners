@@ -2,19 +2,35 @@
   box-sizing: border-box;;
 }
 
+a, a:visited, a:link {
+  color: inherit;
+}
+
 h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
 }
 
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  font-size: 14px;
+  line-height: 1.1;
+  color: #3c3c3c;
+  max-width: 1280px;
 }
 
 header, .page {
-  padding: 0 60px;
+  padding: 0 40px;
 }
 
 header {
@@ -33,42 +49,41 @@ header img {
   width: 100px;
   height: 100px;
   float: left;
-  margin-right: 60px;
+  margin-right: 40px;
 }
 
 h1 {
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 20px;
   margin-bottom: 3px;
 }
 
 h2 {
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 14px;
   font-weight: 400;
 }
 
 h3 {
+  font-size: 20px;
   margin-bottom: 40px;
 }
 
 .page {
-  margin-top: 60px;
+  margin-top: 40px;
   display: grid;
-  grid-template-columns: 400px auto;
+  grid-template-columns: 300px auto;
+  grid-column-gap: 40px;
 }
 
 main {
-  padding-left: 60px;
-  margin-right: -60px;
+  margin-right: -40px;
 }
 
 .colors-list a {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   display: inline-block;
   position: relative;
-  margin: 0 60px 60px 0;
+  margin: 0 40px 40px 0;
 }
 
 .colors-list span {
@@ -77,6 +92,14 @@ main {
   display: inline-block;
   margin-top: 8px;
   text-transform: uppercase;
+}
+
+.colors-list a:hover span {
+  text-decoration: underline;
+}
+
+.product-category {
+  display: block;
 }
 
 .product-category.active {
@@ -90,5 +113,73 @@ main {
   padding-left: 30px;
 }
 .category-level-3 {
-  padding-left: 60px;
+  padding-left: 40px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: auto 350px;
+  grid-column-gap: 40px;
+  margin-bottom: 40px;
+}
+
+.product .preview {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.product form h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.product form .price {
+  font-size: 20px;
+  margin-top: 5px;
+  display: block;
+}
+
+.form-field .sizing-info {
+  text-decoration: underline;
+}
+
+.form-field .sizing-info:hover {
+  cursor: pointer;
+}
+
+.form-field:first-of-type {
+  margin-top: 20px;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-field:last-of-type {
+  margin-bottom: 20px;
+}
+
+.form-field input, .button-group button.active {
+  font-weight: 700;
+}
+
+.form-field input, .form-field .button-group {
+  margin-top: 5px;
+  display: block;
+}
+
+.form-field input, .button-group button {
+  border: 1px solid #dadada;
+  background: transparent;
+  border-radius: 3px;
+  padding: 5px;
+  min-width: 40px;
+  font-size: 14px;
+}
+
+.button-group button.active {
+  border: 2px solid #3c3c3c;
+  padding: 4px;
 }
