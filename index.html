@@ -26,10 +26,15 @@
         <!-- {{CONTENT GOES HERE}} -->
       </main>
     </div>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script>
+      const PRODUCTS = // {{PRODUCT DATA GOES HERE}}
+    </script>
     <script>
       document.querySelectorAll('form button').forEach((el) => {
         el.addEventListener('click', (ev) => ev.preventDefault())
       });
     </script>
+    <script src='/client.js'></script>
   </body>
 </html>

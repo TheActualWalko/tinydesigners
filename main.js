@@ -4,6 +4,7 @@ const buildColorCell = require('./buildColorCell');
 const buildPage = require('./buildPage');
 const buildOrderForm = require('./buildOrderForm');
 const path = require('path');
+const products = require('./products');
 const router = express.Router();
 
 const urlFragments = {
@@ -11,13 +12,12 @@ const urlFragments = {
   FAV_COLOR: 'my-favorite-color'
 };
 
-const PRICE = 50 * 100;
-
 const buildSingleProductUrl = (type, line, slug) => `/${urlFragments[type]}/${urlFragments[line]}/${slug}`;
 const buildProductImageUrl = (type, line, slug) => `/images/${urlFragments[type]}/${urlFragments[line]}/${slug}`;
 
 router.get('/style.css', (req, res) => res.sendFile(path.join(__dirname, 'style.css')));
 router.get('/logo.png', (req, res) => res.sendFile(path.join(__dirname, 'logo.png')));
+router.get('/client.js', (req, res) => res.sendFile(path.join(__dirname, 'client.js')));
 
 router.get('/', (req, res) => {
   res.send(buildPage(`
@@ -35,7 +35,7 @@ router.get('/t-shirt/my-favorite-color/:colorSlug', (req, res) => {
   res.send(buildPage(`
     <section class='product'>
       <img class='preview' src='${buildProductImageUrl('T_SHIRT', 'FAV_COLOR', color.slug)}' />
-      ${buildOrderForm('T_SHIRT', PRICE, `${color.name} Tee`)}
+      ${buildOrderForm('T_SHIRT', products.T_SHIRT.price, `${color.name} ${products.T_SHIRT.name}`)}
     </section>
     <h3>Similar Colors</h3>
     <section class='colors-list'>${
